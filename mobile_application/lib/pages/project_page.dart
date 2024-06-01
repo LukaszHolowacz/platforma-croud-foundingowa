@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../components/project_components/product_card_with_image.dart';
+import '../components/project_components/product_card_without_image.dart';
 
 class ProjectPage extends StatefulWidget {
   final int projectNumber;
@@ -33,6 +35,7 @@ class _ProjectPageState extends State<ProjectPage> {
             children: [
               Container(
                 height: 200,
+                width: MediaQuery.of(context).size.width - 32,
                 color: Colors.grey[300],
                 child: const Center(child: Icon(Icons.image, size: 100)),
               ),
@@ -96,11 +99,39 @@ class _ProjectPageState extends State<ProjectPage> {
                   ),
                 ],
               ),
-              const SizedBox(height: 16),
-              Text(
-                selectedSection,
-                style: const TextStyle(fontSize: 18),
-              ),
+              const SizedBox(height: 24),
+              if (selectedSection == 'Produkty') ...[
+                const Center(
+                  child: Text(
+                    'Oferta dla inwestorów',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                ProductCardWithImage(
+                  title: 'Nazwa produktu',
+                  price: '100zł',
+                  imageUrl: 'lib/assets/images/sample.png',
+                  description: 'Opis pierdolonego produktu ze zdjęciem',
+                ),
+                const SizedBox(height: 16),
+                ProductCardWithoutImage(
+                  title: 'Nazwa produktu',
+                  price: '100zł',
+                  description:
+                      'Opis pierdolonego produktu dla ulanych kurew co nawet zdjęcia',
+                ),
+              ] else ...[
+                Center(
+                  child: Text(
+                    selectedSection,
+                    style: const TextStyle(
+                        fontSize: 18, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                Text('Treść dla sekcji: $selectedSection'),
+              ],
             ],
           ),
         ),
