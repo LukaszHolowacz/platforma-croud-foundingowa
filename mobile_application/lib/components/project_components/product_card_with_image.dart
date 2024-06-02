@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../pages/login_page.dart';
 
 class ProductCardWithImage extends StatefulWidget {
   final String title;
@@ -54,7 +55,7 @@ class _ProductCardWithImageState extends State<ProductCardWithImage> {
                     ),
                   ],
                 ),
-                SizedBox(height: 16),
+                const SizedBox(height: 16),
                 showImage
                     ? Container(
                         height: 150,
@@ -71,13 +72,16 @@ class _ProductCardWithImageState extends State<ProductCardWithImage> {
                   alignment: Alignment.bottomRight,
                   child: ElevatedButton(
                     onPressed: () {
-                      // Akcja przycisku
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
                     },
                     child: Text('Wybierz produkt'),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.green,
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 16.0, vertical: 8.0),
                     ),
                   ),
                 ),

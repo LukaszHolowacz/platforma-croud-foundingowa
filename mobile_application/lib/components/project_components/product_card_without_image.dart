@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../pages/login_page.dart';
 
 class ProductCardWithoutImage extends StatelessWidget {
   final String title;
@@ -46,13 +47,16 @@ class ProductCardWithoutImage extends StatelessWidget {
                 alignment: Alignment.bottomRight,
                 child: ElevatedButton(
                   onPressed: () {
-                    // Akcja przycisku
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginPage()),
+                    );
                   },
                   child: Text('Wybierz produkt'),
                   style: ElevatedButton.styleFrom(
                     primary: Colors.green,
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 16.0, vertical: 8.0),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16.0, vertical: 8.0),
                   ),
                 ),
               ),

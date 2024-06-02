@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../components/project_components/product_card_with_image.dart';
 import '../components/project_components/product_card_without_image.dart';
+import 'login_page.dart'; // Dodaj import dla login_page
 
 class ProjectPage extends StatefulWidget {
   final int projectNumber;
@@ -89,7 +90,12 @@ class _ProjectPageState extends State<ProjectPage> {
                   ),
                   const SizedBox(width: 8),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginPage()),
+                      );
+                    },
                     child: Text('Wesprzyj'),
                     style: ElevatedButton.styleFrom(
                       primary: Colors.green,
