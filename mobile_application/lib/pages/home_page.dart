@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile_application/pages/login_page.dart';
 import '../components/home_components/project_card.dart';
 import 'project_page.dart';
 
@@ -48,7 +49,43 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home Page'),
+        backgroundColor: Colors.white,
+        title: const Text(
+          'Logo',
+          style: TextStyle(color: Colors.blue),
+        ),
+        actions: [
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            child: TextButton(
+              onPressed: () {
+                // Tu dodaj logikę dla przycisku "Zgłoś Projekt"
+              },
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.white,
+                primary: Colors.black,
+                side: const BorderSide(color: Colors.grey),
+              ),
+              child: const Text('Zgłoś Projekt'),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
+            child: TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => LoginPage()),
+                );
+              },
+              child: const Text(
+                'Zaloguj się',
+                style: TextStyle(color: Colors.grey),
+              ),
+            ),
+          )
+        ],
+        elevation: 1,
       ),
       body: Column(
         children: [

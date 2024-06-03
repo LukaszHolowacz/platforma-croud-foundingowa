@@ -26,6 +26,16 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+        elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.grey),
+          onPressed: () {
+            Navigator.pop(context);
+          },
+        ),
+      ),
       body: Stack(
         children: [
           Padding(
@@ -35,7 +45,6 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const SizedBox(height: 56),
                     const Text(
                       'Odzyskiwanie hasła',
                       style:
@@ -66,16 +75,6 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
                   ],
                 ),
               ),
-            ),
-          ),
-          Positioned(
-            top: 16,
-            left: 16,
-            child: IconButton(
-              icon: const Icon(Icons.arrow_back),
-              onPressed: () {
-                Navigator.pop(context);
-              },
             ),
           ),
         ],

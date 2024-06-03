@@ -124,7 +124,7 @@ class _ProductCardState extends State<ProductCard> {
                             borderRadius: BorderRadius.circular(4),
                           ),
                           child: Text(
-                            'wybrało ${widget.supporters} osób',
+                            'Wybrało ${widget.supporters} osób',
                             style: const TextStyle(color: Colors.black54),
                           ),
                         ),
@@ -215,7 +215,7 @@ class _ProductCardState extends State<ProductCard> {
                       child: Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          '+ Szacowany Koszt dostawy: ${widget.deliveryCost.toStringAsFixed(2)}zł',
+                          '+ Koszt dostawy: ${widget.deliveryCost.toStringAsFixed(2)}zł',
                           style:
                               const TextStyle(fontSize: 10, color: Colors.grey),
                         ),

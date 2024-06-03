@@ -17,30 +17,38 @@ class _ProjectPageState extends State<ProjectPage> {
 
   @override
   Widget build(BuildContext context) {
-    final String productName = 'Nazwa produktu';
-    final double price = 100.0;
-    final int remainingQuantity = 7;
-    final int startingQuantity = 500;
-    final int supporters = 312;
-    final String description =
+    const String productName = 'Nazwa produktu';
+    const double price = 100.0;
+    const int remainingQuantity = 7;
+    const int startingQuantity = 500;
+    const int supporters = 312;
+    const String description =
         'Opis, który będzie mógł wyglądać na różne sposoby:\n'
         '- Może\n- być\n- listą\n- punktowaną\n'
         'Może być również pogrubiony, pochylony lub przekreślony.\n\n'
         'Może być powiększony\n'
         'i to wszystko będzie odczytywane z bazy danych';
-    final String deliveryDate = 'Wrzesień 2024';
-    final String deliveryMethod = 'Dostawa do paczkomatu';
-    final double deliveryCost = 20.0;
+    const String deliveryDate = 'Wrzesień 2024';
+    const String deliveryMethod = 'Dostawa do paczkomatu';
+    const double deliveryCost = 20.0;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Nazwa projektu nr: ${widget.projectNumber}'),
+        backgroundColor: Colors.white,
+        title: Text(
+          'Nazwa projektu nr: ${widget.projectNumber}',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back),
+          icon: const Icon(Icons.arrow_back, color: Colors.grey),
           onPressed: () {
             Navigator.pop(context);
           },
         ),
+        elevation: 1,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -123,7 +131,7 @@ class _ProjectPageState extends State<ProjectPage> {
               if (selectedSection == 'Produkty') ...[
                 const Center(
                   child: Text(
-                    'Oferta dla inwestorów',
+                    'Produkty',
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ),

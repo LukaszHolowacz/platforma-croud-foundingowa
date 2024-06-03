@@ -44,7 +44,19 @@ class ProjectCard extends StatelessWidget {
                   color: Colors.blue,
                 ),
                 const SizedBox(height: 4),
-                Text('${(progress * 100).toStringAsFixed(0)}%'),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      '${(progress * 100).toStringAsFixed(0)}%',
+                      style: const TextStyle(color: Colors.black),
+                    ),
+                    const Text(
+                      'Pozostało 30d',
+                      style: TextStyle(color: Colors.black),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
