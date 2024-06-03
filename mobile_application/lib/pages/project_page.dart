@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import '../components/project_components/product_card_with_image.dart';
-import '../components/project_components/product_card_without_image.dart';
-import 'login_page.dart'; // Dodaj import dla login_page
+import '../components/project_components/product_card.dart';
+import 'login_page.dart';
 
 class ProjectPage extends StatefulWidget {
   final int projectNumber;
@@ -18,6 +17,21 @@ class _ProjectPageState extends State<ProjectPage> {
 
   @override
   Widget build(BuildContext context) {
+    final String productName = 'Nazwa produktu';
+    final double price = 100.0;
+    final int remainingQuantity = 7;
+    final int startingQuantity = 500;
+    final int supporters = 312;
+    final String description =
+        'Opis, który będzie mógł wyglądać na różne sposoby:\n'
+        '- Może\n- być\n- listą\n- punktowaną\n'
+        'Może być również pogrubiony, pochylony lub przekreślony.\n\n'
+        'Może być powiększony\n'
+        'i to wszystko będzie odczytywane z bazy danych';
+    final String deliveryDate = 'Wrzesień 2024';
+    final String deliveryMethod = 'Dostawa do paczkomatu';
+    final double deliveryCost = 20.0;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('Nazwa projektu nr: ${widget.projectNumber}'),
@@ -114,18 +128,38 @@ class _ProjectPageState extends State<ProjectPage> {
                   ),
                 ),
                 const SizedBox(height: 16),
-                ProductCardWithImage(
-                  title: 'Nazwa produktu',
-                  price: '100zł',
-                  imageUrl: 'lib/assets/images/sample.png',
-                  description: 'Opis pierdolonego produktu ze zdjęciem',
+                ProductCard(
+                  productName: productName,
+                  price: price,
+                  remainingQuantity: remainingQuantity,
+                  startingQuantity: startingQuantity,
+                  supporters: supporters,
+                  description: description,
+                  deliveryDate: deliveryDate,
+                  deliveryMethod: deliveryMethod,
+                  deliveryCost: deliveryCost,
                 ),
-                const SizedBox(height: 16),
-                ProductCardWithoutImage(
-                  title: 'Nazwa produktu',
-                  price: '100zł',
-                  description:
-                      'Opis pierdolonego produktu dla ulanych kurew co nawet zdjęcia',
+                ProductCard(
+                  productName: productName,
+                  price: 150.0,
+                  remainingQuantity: 5,
+                  startingQuantity: 250,
+                  supporters: supporters,
+                  description: description,
+                  deliveryDate: deliveryDate,
+                  deliveryMethod: deliveryMethod,
+                  deliveryCost: 0,
+                ),
+                ProductCard(
+                  productName: productName,
+                  price: 250.0,
+                  remainingQuantity: 0,
+                  startingQuantity: 100,
+                  supporters: supporters,
+                  description: description,
+                  deliveryDate: deliveryDate,
+                  deliveryMethod: deliveryMethod,
+                  deliveryCost: 25,
                 ),
               ] else ...[
                 Center(
