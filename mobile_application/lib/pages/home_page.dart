@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mobile_application/pages/login_page.dart';
+import 'package:mobile_application/pages/new_project_form/start_project_page.dart';
 import '../components/home_components/project_card.dart';
 import 'project_page.dart';
 
@@ -59,7 +60,10 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.symmetric(vertical: 8.0, horizontal: 4.0),
             child: TextButton(
               onPressed: () {
-                // Tu dodaj logikę dla przycisku "Zgłoś Projekt"
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => StartProjectPage()),
+                );
               },
               style: TextButton.styleFrom(
                 backgroundColor: Colors.white,
