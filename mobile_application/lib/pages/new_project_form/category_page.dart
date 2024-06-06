@@ -36,7 +36,7 @@ class _CategoryPageState extends State<CategoryPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               const Text(
-                'W jakiej kategorii znajduje się twój biznes?',
+                'W jakiej kategorii możesz określić swój projekt?',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 28,

@@ -1,0 +1,108 @@
+{
+    "categories": [
+      {
+        "id": 1,
+        "name": "Technologia",
+        "subcategories": [
+          "Oprogramowanie",
+          "Aplikacje mobilne",
+          "Urządzenia elektroniczne",
+          "Internet of Things",
+          "Sztuczna Inteligencja i Uczenie Maszynowe",
+          "Gry komputerowe i wideo"
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Ekologia",
+        "subcategories": [
+          "Energia odnawialna",
+          "Recykling",
+          "Ochrona środowiska",
+          "Rolnictwo ekologiczne"
+        ]
+      },
+      {
+        "id": 3,
+        "name": "Edukacja",
+        "subcategories": [
+          "Platformy e-learningowe",
+          "Aplikacje edukacyjne",
+          "Narzędzia do zarządzania klasą",
+          "Materiały dydaktyczne"
+        ]
+      },
+      {
+        "id": 4,
+        "name": "Sztuka",
+        "subcategories": [
+          "Filmy i produkcje wideo",
+          "Muzyka",
+          "Literatura i książki",
+          "Sztuki wizualne i wystawy",
+          "Gry planszowe i towarzyskie"
+        ]
+      },
+      {
+        "id": 5,
+        "name": "Moda",
+        "subcategories": [
+          "Ubrania i akcesoria",
+          "Obuwie",
+          "Biżuteria",
+          "Torby i galanteria skórzana"
+        ]
+      },
+      {
+        "id": 6,
+        "name": "Dom",
+        "subcategories": [
+          "Meble i wystrój wnętrz",
+          "Narzędzia ogrodnicze",
+          "Produkty do uprawy roślin",
+          "Sprzęt AGD"
+        ]
+      },
+      {
+        "id": 7,
+        "name": "Żywność",
+        "subcategories": [
+          "Produkty spożywcze",
+          "Napoje",
+          "Restauracje i usługi cateringowe",
+          "Przekąski i słodycze"
+        ]
+      },
+      {
+        "id": 8,
+        "name": "Sport",
+        "subcategories": [
+          "Sprzęt sportowy",
+          "Odzież sportowa",
+          "Usługi treningowe i personalne",
+          "Produkty do aktywności na świeżym powietrzu"
+        ]
+      },
+      {
+        "id": 9,
+        "name": "Robotyka",
+        "subcategories": [
+          "Roboty przemysłowe",
+          "Automatyzacja domowa",
+          "Drony i technologie bezzałogowe",
+          "Urządzenia automatyczne"
+        ]
+      },
+      {
+        "id": 10,
+        "name": "Media",
+        "subcategories": [
+          "Platformy społecznościowe",
+          "Blogi i portale informacyjne",
+          "Podcasty",
+          "Usługi PR i media relations"
+        ]
+      }
+    ]
+  }
+  

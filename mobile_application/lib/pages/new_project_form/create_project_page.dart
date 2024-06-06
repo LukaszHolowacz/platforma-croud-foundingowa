@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import './views/basic_information_about_project.dart';
+import './views/detailed_information_about_project.dart';
+import './views/project_products.dart';
 
 class CreateProjectPage extends StatefulWidget {
   @override
@@ -7,7 +9,7 @@ class CreateProjectPage extends StatefulWidget {
 }
 
 class _CreateProjectPageState extends State<CreateProjectPage> {
-  String _selectedPage = 'Strona 1';
+  String _selectedPage = 'Basic Information';
 
   @override
   Widget build(BuildContext context) {
@@ -15,18 +17,21 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         automaticallyImplyLeading: false,
-        title: const Text(
-          'Logo',
-          style: TextStyle(color: Colors.blue),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            const Text(
+              'Logo',
+              style: TextStyle(color: Colors.blue),
+            ),
+            IconButton(
+              icon: const Icon(Icons.visibility, color: Colors.black),
+              onPressed: () {
+                // Handle preview action
+              },
+            ),
+          ],
         ),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.visibility, color: Colors.black),
-            onPressed: () {
-              // Handle preview action
-            },
-          ),
-        ],
         elevation: 1,
       ),
       body: SingleChildScrollView(
@@ -40,6 +45,7 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 10.0),
                   border: OutlineInputBorder(),
+                  labelText: 'Page',
                 ),
                 value: _selectedPage,
                 onChanged: (String? newValue) {
@@ -47,8 +53,11 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
                     _selectedPage = newValue!;
                   });
                 },
-                items: <String>['Strona 1', 'Strona 2', 'Strona 3']
-                    .map<DropdownMenuItem<String>>((String value) {
+                items: <String>[
+                  'Basic Information',
+                  'Detailed Information about the Project',
+                  'Products'
+                ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
                     child: Align(
@@ -69,12 +78,12 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
 
   Widget _getPageWidget(String page) {
     switch (page) {
-      case 'Strona 1':
+      case 'Basic Information':
         return BasicInformationAboutProject();
-      case 'Strona 2':
-        return const Center(child: Text('Content for Page 2'));
-      case 'Strona 3':
-        return const Center(child: Text('Content for Page 3'));
+      case 'Detailed Information about the Project':
+        return DetailedInformationAboutProject();
+      case 'Products':
+        return ProjectProducts();
       default:
         return BasicInformationAboutProject();
     }
