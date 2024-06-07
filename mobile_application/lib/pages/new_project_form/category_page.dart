@@ -1,4 +1,6 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'create_project_page.dart';
 
 class CategoryPage extends StatefulWidget {
@@ -10,11 +12,27 @@ class _CategoryPageState extends State<CategoryPage> {
   String? selectedCategory;
   String? selectedSubcategory;
   List<String> subcategories = [];
+  Map<String, List<String>> categorySubcategories = {};
 
-  final Map<String, List<String>> categorySubcategories = {
-    'Kategoria 1': ['Podkategoria 1-1', 'Podkategoria 1-2', 'Podkategoria 1-3'],
-    'Kategoria 2': ['Podkategoria 2-1', 'Podkategoria 2-2', 'Podkategoria 2-3'],
-  };
+  @override
+  void initState() {
+    super.initState();
+    loadCategories();
+  }
+
+  Future<void> loadCategories() async {
+    final String response =
+        await rootBundle.loadString('lib/assets/json/categories.json');
+    final data = await json.decode(response);
+    Map<String, List<String>> loadedCategories = {};
+    for (var category in data['categories']) {
+      loadedCategories[category['name']] =
+          List<String>.from(category['subcategories']);
+    }
+    setState(() {
+      categorySubcategories = loadedCategories;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -82,13 +100,15 @@ class _CategoryPageState extends State<CategoryPage> {
                 const SizedBox(height: 20),
               ],
               ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => CreateProjectPage()),
-                  );
-                },
+                onPressed: selectedSubcategory == null
+                    ? null
+                    : () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => CreateProjectPage()),
+                        );
+                      },
                 child: const Text('Przejdź dalej'),
               ),
               const SizedBox(height: 50),

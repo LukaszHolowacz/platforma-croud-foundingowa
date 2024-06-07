@@ -9,7 +9,7 @@ class CreateProjectPage extends StatefulWidget {
 }
 
 class _CreateProjectPageState extends State<CreateProjectPage> {
-  String _selectedPage = 'Basic Information';
+  String _selectedPage = 'Podstawowe informacje';
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,6 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
                 decoration: const InputDecoration(
                   contentPadding: EdgeInsets.symmetric(horizontal: 10.0),
                   border: OutlineInputBorder(),
-                  labelText: 'Page',
                 ),
                 value: _selectedPage,
                 onChanged: (String? newValue) {
@@ -54,9 +53,9 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
                   });
                 },
                 items: <String>[
-                  'Basic Information',
-                  'Detailed Information about the Project',
-                  'Products'
+                  'Podstawowe informacje',
+                  'Dodatkowe informacje',
+                  'Produkty'
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -78,11 +77,11 @@ class _CreateProjectPageState extends State<CreateProjectPage> {
 
   Widget _getPageWidget(String page) {
     switch (page) {
-      case 'Basic Information':
+      case 'Podstawowe informacje':
         return BasicInformationAboutProject();
-      case 'Detailed Information about the Project':
+      case 'Dodatkowe informacje':
         return DetailedInformationAboutProject();
-      case 'Products':
+      case 'Produkty':
         return ProjectProducts();
       default:
         return BasicInformationAboutProject();

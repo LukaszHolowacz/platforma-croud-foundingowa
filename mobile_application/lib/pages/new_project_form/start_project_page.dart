@@ -39,7 +39,7 @@ class StartProjectPage extends StatelessWidget {
                   );
                 },
                 child: const Text('Rozpocznij'),
-                style: ButtonStyle(),
+                style: const ButtonStyle(),
               ),
               const SizedBox(height: 40),
             ],
